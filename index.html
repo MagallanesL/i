@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quién es mejor?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+        button#luis {
+            background-color: #4CAF50;
+            color: white;
+        }
+        button#josiana {
+            background-color: #f44336;
+            color: white;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¿Quién es mejor?</h1>
+        <div class="buttons">
+            <button id="luis">Luis</button>
+            <button id="josiana">Josiana</button>
+        </div>
+    </div>
+
+    <script>
+        const buttonJosiana = document.getElementById('josiana');
+        const buttonLuis = document.getElementById('luis');
+
+        buttonJosiana.addEventListener('mouseover', (event) => {
+            const offsetX = Math.random() * 200 - 100; // Reducido el rango de movimiento
+            const offsetY = Math.random() * 200 - 100; // Reducido el rango de movimiento
+            buttonJosiana.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        });
+
+        buttonLuis.addEventListener('click', () => {
+            alert('YA LO SE');
+        });
+    </script>
+</body>
+</html>
